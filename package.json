@@ -1,0 +1,39 @@
+{
+  "name": "blacklist-whitelist",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts-j": "0.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts-j start",
+    "build": "react-scripts-j build",
+    "test": "react-scripts-j test --env=jsdom",
+    "eject": "react-scripts-j eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "@types/node": "^10.11.3",
+    "@types/react": "^16.4.14",
+    "@types/react-dom": "^16.0.8",
+    "@types/react-redux": "^6.0.9",
+    "gh-pages": "^2.0.0",
+    "typescript": "^3.1.1"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-/blacklist-whitelist.git"
+  },
+  "author": "Jamie Hoeks <j@skeoh.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/j-/blacklist-whitelist/issues"
+  },
+  "homepage": "https://skeoh.com/blacklist-whitelist",
+  "description": ""
+}
