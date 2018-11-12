@@ -1,0 +1,27 @@
+.Char {
+	width: 100%;
+	height: 100%;
+}
+
+.Char-label {
+	display: block;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 1em;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	float: left;
+	text-align: center;
+}
+
+.Char-label:hover {
+	background-color: #eee;
+	border-color: #bbb;
+}
+
+.Char-check:checked + .Char-label {
+	color: #fff;
+	background-color: hsl(200, 100%, 25%);
+	border-color: hsl(200, 70%, 15%);
+}
