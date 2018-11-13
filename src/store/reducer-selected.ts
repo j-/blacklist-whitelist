@@ -1,4 +1,5 @@
 import { Reducer } from 'redux';
+import { buildSimpleCharCodeList } from '../char';
 import { isActionToggleSelected } from './actions';
 
 export interface ReducerState {
@@ -8,14 +9,6 @@ export interface ReducerState {
 const DEFAULT_STATE: ReducerState = {
 	selected: [],
 };
-
-const padStart = (string: string) => (
-	('0000' + string).substr(-4)
-);
-
-const charCodeToExp = (charCode: number) => (
-	'\\u' + padStart(charCode.toString(16))
-);
 
 const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 	if (isActionToggleSelected(action)) {
@@ -44,9 +37,9 @@ export const isSelected = (state: ReducerState, charCode: number) => (
 );
 
 export const buildBlacklist = (state: ReducerState) => (
-	'/[^' + state.selected.map(charCodeToExp).join('') + ']/'
+	'/[^' + buildSimpleCharCodeList(state.selected) + ']/'
 );
 
 export const buildWhitelist = (state: ReducerState) => (
-	'/[' + state.selected.map(charCodeToExp).join('') + ']/'
+	'/[' + buildSimpleCharCodeList(state.selected) + ']/'
 );
