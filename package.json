@@ -5,7 +5,10 @@
   "dependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts-j": "0.3.0"
+    "react-redux": "^5.1.1",
+    "react-scripts-j": "0.3.0",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.5"
   },
   "scripts": {
     "start": "react-scripts-j start",
