@@ -2,29 +2,24 @@ import { Reducer } from 'redux';
 import { buildSimpleCharCodeList } from '../char';
 import { isActionToggleSelected } from './actions';
 
-export interface ReducerState {
-	selected: number[];
+export interface ReducerState extends Array<number> {
+
 }
 
-const DEFAULT_STATE: ReducerState = {
-	selected: [],
-};
+const DEFAULT_STATE: ReducerState = [];
 
 const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 	if (isActionToggleSelected(action)) {
 		const { charCode } = action.data;
-		const { selected } = state;
 		const selectedState = isSelected(state, charCode);
-		return {
-			...state,
-			selected:
-				// Is the character already selected?
-				selectedState ?
-					// If so, remove it
-					selected.filter((item) => item !== charCode) :
-					// If not, append it
-					[...selected, charCode].sort(),
-		};
+		return (
+			// Is the character already selected?
+			selectedState ?
+				// If so, remove it
+				state.filter((item) => item !== charCode) :
+				// If not, insert it
+				[...state, charCode].sort()
+		);
 	}
 
 	return state;
@@ -33,13 +28,13 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 export default reducer;
 
 export const isSelected = (state: ReducerState, charCode: number) => (
-	state.selected.indexOf(charCode) > -1
+	state.indexOf(charCode) > -1
 );
 
 export const buildBlacklist = (state: ReducerState) => (
-	'/[^' + buildSimpleCharCodeList(state.selected) + ']/'
+	'/[^' + buildSimpleCharCodeList(state) + ']/'
 );
 
 export const buildWhitelist = (state: ReducerState) => (
-	'/[' + buildSimpleCharCodeList(state.selected) + ']/'
+	'/[' + buildSimpleCharCodeList(state) + ']/'
 );
