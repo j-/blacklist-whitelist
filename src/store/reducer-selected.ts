@@ -18,7 +18,7 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 				// If so, remove it
 				state.filter((item) => item !== charCode) :
 				// If not, insert it
-				[...state, charCode].sort()
+				[...state, charCode].sort((a, b) => a - b)
 		);
 	}
 
