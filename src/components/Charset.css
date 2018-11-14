@@ -13,4 +13,6 @@
 .Charset-cell {
 	width: 3em;
 	height: 3em;
+	margin-right: -1px;
+	margin-bottom: -1px;
 }

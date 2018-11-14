@@ -1,6 +1,7 @@
 .Char {
 	width: 100%;
 	height: 100%;
+	user-select: none;
 }
 
 .Char-label {
@@ -13,19 +14,28 @@
 	cursor: pointer;
 	float: left;
 	text-align: center;
+	position: relative;
+	z-index: 1;
 }
 
 .Char-label:hover {
 	background-color: #eee;
 	border-color: #bbb;
+	z-index: 2;
 }
 
 .Char-check:checked + .Char-label {
-	color: #fff;
-	background-color: hsl(200, 100%, 25%);
-	border-color: hsl(200, 70%, 15%);
+	background-color: hsl(200, 80%, 80%);
+	border-color: hsl(200, 70%, 50%);
+	z-index: 3;
 }
 
 .Char-check:checked + .Char-label * {
-	color: #fff;
+	color: hsl(200, 70%, 20%);
+}
+
+.Char-check:checked + .Char-label:hover {
+	background-color: hsl(200, 80%, 75%);
+	border-color: hsl(200, 70%, 45%);
+	z-index: 3;
 }
