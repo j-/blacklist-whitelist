@@ -1,5 +1,7 @@
 import * as React from 'react';
 import Charset from './Charset';
+import ToggleNonPrintable from '../containers/ToggleNonPrintable';
+import TogglePrintable from '../containers/TogglePrintable';
 import Blacklist from '../containers/Blacklist';
 import Whitelist from '../containers/Whitelist';
 import './App.css';
@@ -9,6 +11,12 @@ const App: React.StatelessComponent = () => (
 		<Charset />
 
 		<br />
+
+		<div className="App-actions">
+			<ToggleNonPrintable>Toggle non-printable characters</ToggleNonPrintable>
+			<br />
+			<TogglePrintable>Toggle printable characters</TogglePrintable>
+		</div>
 
 		<div className="App-blacklist-container">
 			<label htmlFor="App-blacklist">Blacklist</label><br />

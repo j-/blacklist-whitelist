@@ -1,4 +1,5 @@
 import { Action } from 'redux';
+import { NON_PRINTABLE, PRINTABLE } from '../char';
 
 export interface ActionInvertRange extends Action {
 	type: 'InvertRange';
@@ -20,4 +21,12 @@ export const invertRange = (charCodes: number[]): ActionInvertRange => ({
 
 export const invertCharacter = (charCode: number) => (
 	invertRange([charCode])
+);
+
+export const invertNonPrintable = () => (
+	invertRange(NON_PRINTABLE)
+);
+
+export const invertPrintable = () => (
+	invertRange(PRINTABLE)
 );
