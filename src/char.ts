@@ -68,6 +68,14 @@ export const SYMBOLS = Object.freeze({
 	0x7F: 'DEL',
 });
 
+export const hasSymbol = (charCode: number) => (
+	charCode in SYMBOLS
+);
+
+export const getSymbol = (charCode: number) => (
+	SYMBOLS[charCode]
+);
+
 export const NON_PRINTABLE = [
 	0x00,
 	0x01,

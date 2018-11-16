@@ -5,9 +5,9 @@ export interface Props {
 	children: number;
 }
 
-const CharReal: React.StatelessComponent<Props> = ({ children }) => (
+const CharReal: React.StatelessComponent<Props> = ({ children: charCode }) => (
 	<span className="CharReal">
-		{String.fromCharCode(children)}
+		{String.fromCharCode(charCode)}
 	</span>
 );
 

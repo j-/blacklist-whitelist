@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SYMBOLS, charCodeToExp } from '../char';
+import { charCodeToExp, hasSymbol } from '../char';
 import './Char.css';
 import CharSymbol from './CharSymbol';
 import CharReal from './CharReal';
@@ -15,7 +15,7 @@ const Char: React.StatelessComponent<Props> = ({ charCode, ...props }) => {
 			<input className="Char-check visually-hidden" id={id} type="checkbox" {...props} />
 			<label className="Char-label" htmlFor={id}>
 				{
-					charCode in SYMBOLS ?
+					hasSymbol(charCode) ?
 						<CharSymbol>{charCode}</CharSymbol> :
 						<CharReal>{charCode}</CharReal>
 				}
