@@ -1,5 +1,7 @@
 import { Action } from 'redux';
-import { NON_PRINTABLE, PRINTABLE } from '../char';
+import { NON_PRINTABLE, PRINTABLE, Range } from '../char';
+
+/* Invert range */
 
 export interface ActionInvertRange extends Action {
 	type: 'InvertRange';
@@ -30,3 +32,38 @@ export const invertNonPrintable = () => (
 export const invertPrintable = () => (
 	invertRange(PRINTABLE)
 );
+
+/* Highlight range */
+
+export interface ActionHighlightRange extends Action {
+	type: 'HighlightRange';
+	data: {
+		range: Range | null;
+	};
+}
+
+export const isActionHighlightRange = (action: Action): action is ActionHighlightRange => (
+	action.type === 'HighlightRange'
+);
+
+export const highlightRange = (range: Range): ActionHighlightRange => ({
+	type: 'HighlightRange',
+	data: {
+		range,
+	},
+});
+
+export const highlightRangeNonPrintable = () => (
+	highlightRange(Range.NON_PRINTABLE)
+);
+
+export const highlightRangePrintable = () => (
+	highlightRange(Range.PRINTABLE)
+);
+
+export const removeHightlight = (): ActionHighlightRange => ({
+	type: 'HighlightRange',
+	data: {
+		range: null,
+	},
+});

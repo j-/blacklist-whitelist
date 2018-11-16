@@ -1,0 +1,11 @@
+.CharsetRange {
+	transition: opacity 0.5s;
+}
+
+.CharsetRange--highlight-on {
+	opacity: 1.0;
+}
+
+.CharsetRange--highlight-off {
+	opacity: 0.5;
+}

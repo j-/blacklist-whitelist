@@ -209,3 +209,8 @@ export const PRINTABLE = [
 	0x7E,
 	0x7F,
 ];
+
+export enum Range {
+	NON_PRINTABLE,
+	PRINTABLE,
+}
