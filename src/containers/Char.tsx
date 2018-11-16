@@ -1,7 +1,7 @@
 import { connect, MapStateToProps, MapDispatchToProps } from 'react-redux';
 import Char from '../components/Char';
 import { RootReducerState, isSelected } from '../store';
-import { toggleSelected } from '../store/actions';
+import { invertSelection } from '../store/actions';
 
 interface StateProps {
 	checked: boolean;
@@ -22,7 +22,7 @@ const mapStateToProps: MapStateToProps<StateProps, OwnProps, RootReducerState> =
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = (dispatch, { charCode }) => ({
 	onChange: () => (
 		dispatch(
-			toggleSelected(charCode)
+			invertSelection([charCode])
 		)
 	)
 });

@@ -1,6 +1,6 @@
 import { Reducer } from 'redux';
 import { buildSimpleCharCodeList } from '../char';
-import { isActionToggleSelected } from './actions';
+import { isActionInvertSelection } from './actions';
 
 export interface ReducerState extends Array<number> {
 
@@ -8,18 +8,17 @@ export interface ReducerState extends Array<number> {
 
 const DEFAULT_STATE: ReducerState = [];
 
+const numeric = (a: number, b: number) => a - b;
+
 const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
-	if (isActionToggleSelected(action)) {
-		const { charCode } = action.data;
-		const selectedState = isSelected(state, charCode);
-		return (
-			// Is the character already selected?
-			selectedState ?
-				// If so, remove it
-				state.filter((item) => item !== charCode) :
-				// If not, insert it
-				[...state, charCode].sort((a, b) => a - b)
-		);
+	if (isActionInvertSelection(action)) {
+		const { charCodes } = action.data;
+		const toRemove = charCodes.filter((item) => state.indexOf(item) >= 0);
+		const toAdd = charCodes.filter((item) => state.indexOf(item) < 0);
+		return [
+			...state.filter((item) => toRemove.indexOf(item) < 0),
+			...toAdd,
+		].sort(numeric);
 	}
 
 	return state;

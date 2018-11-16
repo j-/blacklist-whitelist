@@ -1,19 +1,19 @@
 import { Action } from 'redux';
 
-export interface ActionToggleSelected extends Action {
-	type: 'ToggleSelected';
+export interface ActionInvertSelection extends Action {
+	type: 'InvertSelection';
 	data: {
-		charCode: number;
+		charCodes: number[];
 	};
 }
 
-export const isActionToggleSelected = (action: Action): action is ActionToggleSelected => (
-	action.type === 'ToggleSelected'
+export const isActionInvertSelection = (action: Action): action is ActionInvertSelection => (
+	action.type === 'InvertSelection'
 );
 
-export const toggleSelected = (charCode: number): ActionToggleSelected => ({
-	type: 'ToggleSelected',
+export const invertSelection = (charCodes: number[]): ActionInvertSelection => ({
+	type: 'InvertSelection',
 	data: {
-		charCode,
+		charCodes,
 	},
 });
