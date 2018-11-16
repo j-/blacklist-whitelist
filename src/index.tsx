@@ -6,6 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider as StoreProvider } from 'react-redux';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
 const store = createStore(rootReducer, composeWithDevTools());

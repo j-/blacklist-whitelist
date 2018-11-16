@@ -6,7 +6,7 @@ const mapDispatchToProps: MapDispatchToProps<P, P> = ({
 	onClick: invertNonPrintable,
 });
 
-export default connect(
+export default connect<P, P, P, P>(
 	null,
 	mapDispatchToProps,
 )(Button);
