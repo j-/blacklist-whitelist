@@ -1,6 +1,6 @@
 import { Reducer } from 'redux';
 import { buildSimpleCharCodeList } from '../char';
-import { isActionInvertSelection } from './actions';
+import { isActionInvertRange } from './actions';
 
 export interface ReducerState extends Array<number> {
 
@@ -11,7 +11,7 @@ const DEFAULT_STATE: ReducerState = [];
 const numeric = (a: number, b: number) => a - b;
 
 const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
-	if (isActionInvertSelection(action)) {
+	if (isActionInvertRange(action)) {
 		const { charCodes } = action.data;
 		const toRemove = charCodes.filter((item) => state.indexOf(item) >= 0);
 		const toAdd = charCodes.filter((item) => state.indexOf(item) < 0);

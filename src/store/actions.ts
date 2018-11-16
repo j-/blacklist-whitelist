@@ -1,19 +1,23 @@
 import { Action } from 'redux';
 
-export interface ActionInvertSelection extends Action {
-	type: 'InvertSelection';
+export interface ActionInvertRange extends Action {
+	type: 'InvertRange';
 	data: {
 		charCodes: number[];
 	};
 }
 
-export const isActionInvertSelection = (action: Action): action is ActionInvertSelection => (
-	action.type === 'InvertSelection'
+export const isActionInvertRange = (action: Action): action is ActionInvertRange => (
+	action.type === 'InvertRange'
 );
 
-export const invertSelection = (charCodes: number[]): ActionInvertSelection => ({
-	type: 'InvertSelection',
+export const invertRange = (charCodes: number[]): ActionInvertRange => ({
+	type: 'InvertRange',
 	data: {
 		charCodes,
 	},
 });
+
+export const invertCharacter = (charCode: number) => (
+	invertRange([charCode])
+);
