@@ -14,9 +14,9 @@ const App: React.StatelessComponent = () => (
 		</section>
 
 		<section className="mb-5">
-			<ToggleNonPrintable className="btn btn-light">Toggle non-printable characters</ToggleNonPrintable>
+			<ToggleNonPrintable className="btn btn-light">Toggle non-printable</ToggleNonPrintable>
 			&nbsp;
-			<TogglePrintable className="btn btn-light">Toggle printable characters</TogglePrintable>
+			<TogglePrintable className="btn btn-light">Toggle printable</TogglePrintable>
 		</section>
 
 		<section className="mb-5">
