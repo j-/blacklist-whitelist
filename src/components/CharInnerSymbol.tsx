@@ -1,19 +1,19 @@
 import * as React from 'react';
 import { hasSymbol, getSymbol } from '../char';
-import './CharSymbol.css';
+import './CharInnerSymbol.css';
 
 export interface Props {
 	children: number;
 }
 
-const CharSymbol: React.StatelessComponent<Props> = ({ children: charCode }) => (
+const CharInnerSymbol: React.StatelessComponent<Props> = ({ children: charCode }) => (
 	hasSymbol(charCode) ?
 		// Code point has a corresponding symbol
-		<span className="CharSymbol">
+		<span className="CharInnerSymbol">
 			{getSymbol(charCode)}
 		</span> :
 		// Do not render anything otherwise
 		null
 );
 
-export default CharSymbol;
+export default CharInnerSymbol;

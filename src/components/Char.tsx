@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { charCodeToExp, hasSymbol } from '../char';
+import { charCodeToExp } from '../char';
+import CharInner from './CharInner';
 import './Char.css';
-import CharSymbol from './CharSymbol';
-import CharReal from './CharReal';
 
 export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 	charCode: number;
@@ -14,11 +13,7 @@ const Char: React.StatelessComponent<Props> = ({ charCode, ...props }) => {
 		<div className="Char" title={charCodeToExp(charCode)}>
 			<input className="Char-check visually-hidden" id={id} type="checkbox" {...props} />
 			<label className="Char-label" htmlFor={id}>
-				{
-					hasSymbol(charCode) ?
-						<CharSymbol>{charCode}</CharSymbol> :
-						<CharReal>{charCode}</CharReal>
-				}
+				<CharInner>{charCode}</CharInner>
 			</label>
 		</div>
 	);
