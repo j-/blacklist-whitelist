@@ -4,7 +4,7 @@ const padStart = (string: string) => (
 	('0000' + string).substr(-4)
 );
 
-const charCodeToExp = (charCode: number) => (
+export const charCodeToExp = (charCode: number) => (
 	'\\u' + padStart(charCode.toString(16))
 );
 
