@@ -1,12 +1,12 @@
 import { Reducer } from 'redux';
-import { buildSimpleCharCodeList, NON_PRINTABLE } from '../char';
+import { buildSimpleCharCodeList, PRINTABLE } from '../char';
 import { isActionInvertRange } from './actions';
 
 export interface ReducerState extends Array<number> {
 
 }
 
-const DEFAULT_STATE: ReducerState = NON_PRINTABLE;
+const DEFAULT_STATE: ReducerState = PRINTABLE;
 
 const numeric = (a: number, b: number) => a - b;
 
