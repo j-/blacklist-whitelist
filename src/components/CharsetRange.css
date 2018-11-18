@@ -1,11 +1,16 @@
 .CharsetRange {
 	transition: opacity 0.5s;
+	position: relative;
+	z-index: 1;
 }
 
 .CharsetRange--highlight-on {
 	opacity: 1.0;
+	z-index: 3;
+	outline: 5px solid #0056b3;
 }
 
 .CharsetRange--highlight-off {
 	opacity: 0.5;
+	z-index: 2;
 }
