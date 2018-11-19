@@ -1,0 +1,23 @@
+.TestGrid {
+	display: grid;
+	grid-template-columns: repeat(16, 1fr);
+	grid-template-rows: repeat(8, 1fr);
+	cursor: default;
+}
+
+.TestGrid-char {
+	text-align: center;
+	padding: 0.5em 0.25em;
+	border: 1px solid #ccc;
+	margin-right: -1px;
+	margin-bottom: -1px;
+	position: relative;
+	z-index: 1;
+	transition: background-color 0.25s;
+}
+
+.TestGrid-char--matches {
+	background-color: hsl(200, 80%, 80%);
+	border-color: hsl(200, 70%, 50%);
+	z-index: 2;
+}

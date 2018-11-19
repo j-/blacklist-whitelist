@@ -4,6 +4,7 @@ import ToggleNonPrintable from '../containers/ToggleNonPrintable';
 import TogglePrintable from '../containers/TogglePrintable';
 import Blacklist from '../containers/Blacklist';
 import Whitelist from '../containers/Whitelist';
+import TestExpr from './TestExpr';
 
 const App: React.StatelessComponent = () => (
 	<div className="App container mt-5 mb-5">
@@ -31,6 +32,14 @@ const App: React.StatelessComponent = () => (
 				<label htmlFor="App-whitelist">Whitelist</label>
 			</h2>
 			<Whitelist id="App-whitelist" className="form-control text-monospace" />
+		</section>
+
+		<br />
+
+		<section className="mb-5">
+			<div className="card card-body">
+				<TestExpr />
+			</div>
 		</section>
 	</div>
 );
