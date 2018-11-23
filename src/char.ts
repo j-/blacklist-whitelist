@@ -1,11 +1,7 @@
 export type CharCodeList = number[];
 
-const padStart = (string: string) => (
-	('0000' + string).substr(-4)
-);
-
 export const charCodeToExp = (charCode: number) => (
-	'\\u' + padStart(charCode.toString(16))
+	'\\x' + (charCode < 0x10 ? '0' : '') + charCode.toString(16)
 );
 
 export const buildSimpleCharCodeList = (inputList: CharCodeList) => {
