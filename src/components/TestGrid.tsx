@@ -16,7 +16,11 @@ const TestGrid: React.StatelessComponent<Props> = ({ expr }) => {
 			'TestGrid-char--matches': matches,
 		});
 		children.push(
-			<div className={className} key={charCode} title={charCodeSummary(charCode)}>
+			<div
+				className={className}
+				key={charCode}
+				title={charCodeSummary(charCode)}
+			>
 				<CharInner>{charCode}</CharInner>
 			</div>
 		);
