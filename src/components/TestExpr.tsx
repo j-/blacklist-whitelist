@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 import TestGrid from './TestGrid';
+import TestExprFeedback from './TestExprFeedback';
 
 export interface Props {
 
@@ -34,11 +35,7 @@ export default class TestExpr extends React.Component<Props, State> {
 					value={source}
 					onChange={this.handleSourceChange}
 				/>
-				{
-					error ?
-						<small className="invalid-feedback">{error.message}</small> :
-						<small className="form-text text-muted">Will be interpreted as <code>expr.source</code></small>
-				}
+				<TestExprFeedback error={error} />
 				<div className="mt-3">
 					<TestGrid expr={expr} />
 				</div>
