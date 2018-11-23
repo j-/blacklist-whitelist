@@ -6,7 +6,9 @@ export interface Props {
 	children: number;
 }
 
-const CharInnerSymbol: React.StatelessComponent<Props> = ({ children: charCode }) => (
+const CharInnerSymbol: React.StatelessComponent<Props> = ({
+	children: charCode,
+}) => (
 	hasSymbol(charCode) ?
 		// Code point has a corresponding symbol
 		<span className="CharInnerSymbol">

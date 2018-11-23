@@ -7,7 +7,9 @@ export interface Props {
 	highlight?: boolean;
 }
 
-const CharsetRangePrintable: React.StatelessComponent<Props> = ({ highlight }) => {
+const CharsetRangePrintable: React.StatelessComponent<Props> = ({
+	highlight,
+}) => {
 	const rows: React.ReactChild[] = [];
 	for (let y = 2; y < 8; y++) {
 		rows.push(

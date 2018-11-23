@@ -1,6 +1,11 @@
 import { connect, MapStateToProps, MapDispatchToProps } from 'react-redux';
 import CharsetRangeNonPrintable from '../components/CharsetRangeNonPrintable';
-import { RootReducerState, isHightlightRangeAny, isHighlightRangeNonPrintable } from '../store';
+
+import {
+	RootReducerState,
+	isHightlightRangeAny,
+	isHighlightRangeNonPrintable,
+} from '../store';
 
 interface StateProps {
 	highlight?: boolean;

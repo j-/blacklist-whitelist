@@ -11,7 +11,12 @@ const Char: React.StatelessComponent<Props> = ({ charCode, ...props }) => {
 	const id = `Char-id-${charCode}`;
 	return (
 		<div className="Char" title={charCodeSummary(charCode)}>
-			<input className="Char-check visually-hidden" id={id} type="checkbox" {...props} />
+			<input
+				className="Char-check visually-hidden"
+				id={id}
+				type="checkbox"
+				{...props}
+			/>
 			<label className="Char-label" htmlFor={id}>
 				<CharInner>{charCode}</CharInner>
 			</label>

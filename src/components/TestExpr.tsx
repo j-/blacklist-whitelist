@@ -25,12 +25,18 @@ export default class TestExpr extends React.Component<Props, State> {
 
 	render () {
 		const { source, expr, error } = this.state;
+		const inputClassName = classNames(
+			'form-control text-monospace',
+			error && 'is-invalid',
+		);
 		return (
 			<div className="TestExpr">
-				<h2 className="mb-3"><label htmlFor="TestExpr-source">Test expression</label></h2>
+				<h2 className="mb-3">
+					<label htmlFor="TestExpr-source">Test expression</label>
+				</h2>
 				<input
 					id="TestExpr-source"
-					className={classNames('form-control text-monospace', error && 'is-invalid')}
+					className={inputClassName}
 					type="text"
 					value={source}
 					onChange={this.handleSourceChange}

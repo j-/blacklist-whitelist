@@ -5,7 +5,9 @@ export interface Props {
 	children: number;
 }
 
-const CharInnerReal: React.StatelessComponent<Props> = ({ children: charCode }) => (
+const CharInnerReal: React.StatelessComponent<Props> = ({
+	children: charCode,
+}) => (
 	<span className="CharInnerReal">
 		{String.fromCharCode(charCode)}
 	</span>

@@ -6,7 +6,10 @@ export interface Props {
 	highlight?: boolean;
 }
 
-const CharsetRange: React.StatelessComponent<Props> = ({ highlight, children }) => (
+const CharsetRange: React.StatelessComponent<Props> = ({
+	highlight,
+	children,
+}) => (
 	<div
 		className={classNames('CharsetRange', {
 			'CharsetRange--highlight-on': highlight === true,
