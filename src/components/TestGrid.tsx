@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
+import { charCodeSummary } from '../char';
 import CharInner from './CharInner';
 import './TestGrid.css';
 
@@ -15,7 +16,7 @@ const TestGrid: React.StatelessComponent<Props> = ({ expr }) => {
 			'TestGrid-char--matches': matches,
 		});
 		children.push(
-			<div className={className} key={charCode}>
+			<div className={className} key={charCode} title={charCodeSummary(charCode)}>
 				<CharInner>{charCode}</CharInner>
 			</div>
 		);

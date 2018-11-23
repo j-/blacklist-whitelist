@@ -4,6 +4,11 @@ export const charCodeToExp = (charCode: number) => (
 	'\\x' + (charCode < 0x10 ? '0' : '') + charCode.toString(16)
 );
 
+export const charCodeSummary = (charCode: number) => (
+	charCodeToExp(charCode) +
+	(hasSymbol(charCode) ? ` (${getName(charCode)})` : '')
+);
+
 export const buildSimpleCharCodeList = (inputList: CharCodeList) => {
 	let result = '';
 	let run = false;
@@ -64,12 +69,53 @@ export const SYMBOLS = Object.freeze({
 	0x7F: 'DEL',
 });
 
+export const NAMES = Object.freeze({
+	0x00: 'Null',
+	0x01: 'Start of Heading',
+	0x02: 'Start of Text',
+	0x03: 'End of Text',
+	0x04: 'End of Transmission',
+	0x05: 'Enquiry',
+	0x06: 'Acknowledgement',
+	0x07: 'Bell',
+	0x08: 'Backspace',
+	0x09: 'Horizontal Tab',
+	0x0A: 'Line Feed',
+	0x0B: 'Vertical Tab',
+	0x0C: 'Form Feed',
+	0x0D: 'Carriage Return',
+	0x0E: 'Shift Out',
+	0x0F: 'Shift In',
+	0x10: 'Data Link Escape',
+	0x11: 'Device Control 1',
+	0x12: 'Device Control 2',
+	0x13: 'Device Control 3',
+	0x14: 'Device Control 4',
+	0x15: 'Negative Acknowledgement',
+	0x16: 'Synchronous Idle',
+	0x17: 'End of Transmission Block',
+	0x18: 'Cancel',
+	0x19: 'End of Medium',
+	0x1A: 'Substitute',
+	0x1B: 'Escape',
+	0x1C: 'File Separator',
+	0x1D: 'Group Separator',
+	0x1E: 'Record Separator',
+	0x1F: 'Unit Separator',
+	0x20: 'Space',
+	0x7F: 'Delete',
+});
+
 export const hasSymbol = (charCode: number) => (
 	charCode in SYMBOLS
 );
 
 export const getSymbol = (charCode: number) => (
 	SYMBOLS[charCode]
+);
+
+export const getName = (charCode: number) => (
+	NAMES[charCode]
 );
 
 export const NON_PRINTABLE = [
