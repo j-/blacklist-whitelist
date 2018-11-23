@@ -30,10 +30,10 @@ export const isSelected = (state: ReducerState, charCode: number) => (
 	state.indexOf(charCode) > -1
 );
 
-export const buildBlacklist = (state: ReducerState) => (
-	'/[^' + buildSimpleCharCodeList(state) + ']/'
+export const buildBlacklistSource = (state: ReducerState) => (
+	'[^' + buildSimpleCharCodeList(state) + ']'
 );
 
-export const buildWhitelist = (state: ReducerState) => (
-	'/[' + buildSimpleCharCodeList(state) + ']/'
+export const buildWhitelistSource = (state: ReducerState) => (
+	'[' + buildSimpleCharCodeList(state) + ']'
 );

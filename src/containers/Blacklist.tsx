@@ -1,9 +1,9 @@
 import { connect, MapStateToProps, MapDispatchToProps } from 'react-redux';
 import Input, { Props as P } from '../components/Input';
-import { RootReducerState, buildBlacklist } from '../store';
+import { RootReducerState, buildBlacklistSource } from '../store';
 
 const mapStateToProps: MapStateToProps<P, P, RootReducerState> = (state) => ({
-	value: buildBlacklist(state),
+	value: buildBlacklistSource(state),
 	readOnly: true,
 });
 

@@ -30,10 +30,10 @@ export const isSelected = (state: RootReducerState, charCode: number) => (
 	selected.isSelected(state.selected, charCode)
 );
 
-export const buildBlacklist = (state: RootReducerState) => (
-	selected.buildBlacklist(state.selected)
+export const buildBlacklistSource = (state: RootReducerState) => (
+	selected.buildBlacklistSource(state.selected)
 );
 
-export const buildWhitelist = (state: RootReducerState) => (
-	selected.buildWhitelist(state.selected)
+export const buildWhitelistSource = (state: RootReducerState) => (
+	selected.buildWhitelistSource(state.selected)
 );
