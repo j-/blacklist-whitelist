@@ -8,6 +8,7 @@ import TestExpr from './TestExpr';
 
 const App: React.StatelessComponent = () => (
 	<div className="App container mt-5 mb-5">
+		<a href="https://skeoh.com/" className="text-secondary">&larr; skeoh.com</a>
 		<h1 className="mb-5">Blacklist / Whitelist</h1>
 
 		<section className="mb-5">
